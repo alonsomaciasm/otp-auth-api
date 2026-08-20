@@ -1,0 +1,77 @@
+MIT License
+
+Copyright (c) 2026 MC. José Alonso Macías Montoya / Universidad Politécnica de Chiapas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice, this permission notice, and the following conditions
+shall be included in all copies or substantial portions of the Software:
+
+1. ATRIBUCIÓN DE AUTORÍA: En caso de utilizar, modificar, publicar o redistribuir 
+   este código o API en otros proyectos académicos, comerciales o de software libre, 
+   se solicita mantener la debida mención o atribución de autoría al MC. José Alonso 
+   Macías Montoya y a la Universidad Politécnica de Chiapas.
+
+2. CUMPLIMIENTO LFPDPPP (MÉXICO) Y PROTECCIÓN DE DATOS: Esta API ha sido diseñada 
+   bajo arquitectura Zero-Trust, PII-Zero y Mínimo Privilegio. El tratamiento de tokens, 
+   desafíos PoW y contraseñas (hasheadas con Argon2id) se realiza bajo estándares estrictos de seguridad. 
+   Cualquier persona física o moral que despliegue o aloje esta API hacia terceros 
+   asume de forma exclusiva el carácter de "Responsable del Tratamiento de Datos Personales" 
+   en apego a la LFPDPPP y disposiciones del INAI (México) u normativas internacionales equivalentes (GDPR).
+
+3. DESLINDE DE RESPONSABILIDAD: El autor (MC. José Alonso Macías Montoya) y la 
+   Universidad Politécnica de Chiapas quedan completamente liberados de cualquier 
+   responsabilidad legal, civil, administrativa, penal o comercial derivada del uso, 
+   mal uso, almacenamiento indebido o tratamiento no autorizado de información que 
+   realicen terceros utilizando esta herramienta.
+
+4. ATRIBUCIÓN Y LICENCIAS DE FUENTES Y RECURSOS DE TERCEROS:
+   Esta aplicación integra y/o consume las siguientes tecnologías y recursos de código abierto bajo sus respectivas licencias permisivas:
+
+    a) High-Performance ASGI Web Server & Framework (FastAPI, Granian, Starlette):
+       - Mantenedores: Sebastián Ramírez (Tiangolo), Giovanni Tagliani (Emmett Framework), Encode.
+       - Licencias: MIT License / BSD License.
+       - Uso: Servidor web asíncrono en Rust/Python y ruteo de peticiones REST API.
+
+    b) High-Performance Configurable JSON Parser (msgspec):
+       - Mantenedor: Jim Crist-Harif.
+       - Licencia: BSD 3-Clause License.
+       - Uso: Serialización y deserialización JSON de ultra-alta velocidad (4.26x speedup).
+
+    c) Criptografía, Hashing y Protocolos de Autenticación (Argon2-cffi, PyJWT, Cryptography, PyWebAuthn):
+       - Mantenedores: Hynek Schlawack, PyCA, Duo Security / Yubico.
+       - Licencias: MIT License / Apache License 2.0 / BSD License.
+       - Uso: Hashing de contraseñas Argon2id, tokens JWT, firma PoW SHA-256 y autenticación biométrica FIDO2 Passkeys.
+
+    d) Machine Learning & Detección de Anomalías (Scikit-Learn, NumPy, SciPy):
+       - Mantenedores: Scikit-learn developers, NumPy Developers, SciPy Developers.
+       - Licencias: BSD 3-Clause License.
+       - Uso: Vector #8 de detección de anomalías no supervisada (Isolation Forest).
+
+    e) Observabilidad, Métricas y Logging Estructurado (Structlog, Prometheus Client):
+       - Mantenedores: Hynek Schlawack, Prometheus Authors.
+       - Licencias: Apache License 2.0 / MIT License.
+       - Uso: Logs estructurados JSON/Console e instrumentalización de métricas Prometheus (/metrics).
+
+    f) Base de Datos y Mapeo ORM (SQLAlchemy, AIOSQLite, Alembic):
+       - Mantenedores: Michael Bayer, SQLAlchemy Authors.
+       - Licencias: MIT License.
+       - Uso: Persistencia asíncrona SQLite WAL y gestión de migraciones.
+
+    g) Tipografía y Librerías Frontend (Google Fonts - Inter, JetBrains Mono, Chart.js):
+       - Mantenedores: Rasmus Anders, JetBrains, Chart.js Contributors.
+       - Licencias: SIL Open Font License 1.1 / Apache License 2.0 / MIT License.
+       - Uso: Presentación gráfica, gráficos interactivos y tipografía en el Dashboard SIEM (/dashboard).
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

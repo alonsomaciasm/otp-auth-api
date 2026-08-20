@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: otp_auth_api
+    ports:
+      - "${API_PORT:-8000}:8000"
+    env_file:
+      - .env
+    environment:
+      - TZ=${TZ:-America/Mexico_City}
+      - ENVIRONMENT=${ENVIRONMENT:-production}
+      - DATABASE_URL=${DATABASE_URL:-sqlite+aiosqlite:////app/data/sql_app.db}
+      - USE_REDIS=${USE_REDIS:-false}
+      - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
+      - ENABLE_PUBLIC_REGISTRATION=${ENABLE_PUBLIC_REGISTRATION:-true}
+      - OTP_EXPIRE_SECONDS=${OTP_EXPIRE_SECONDS:-300}
+      - OTP_CHANNEL=${OTP_CHANNEL:-console}
+      - OTP_TYPE=${OTP_TYPE:-numeric}
+      - OTP_LENGTH=${OTP_LENGTH:-6}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-SUPER_SECRET_PRODUCTION_KEY_CHANGE_ME_NOW_12345}
+    volumes:
+      - sqlite_data:/app/data
+    tmpfs:
+      - /tmp
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
+        reservations:
+          cpus: '0.10'
+          memory: 64M
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: otp_auth_redis
+    profiles:
+      - redis
+      - full
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - SETGID
+      - SETUID
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    restart: unless-stopped
+
+volumes:
+  sqlite_data:
+  redis_data:

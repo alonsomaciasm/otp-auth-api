@@ -1,0 +1,20 @@
+{
+  "permissions": [
+    { "code": "users:read", "description": "Read own user profile" },
+    { "code": "users:write", "description": "Update own user profile" },
+    { "code": "admin:read", "description": "Read any user or admin resources" },
+    { "code": "admin:write", "description": "Manage users, roles and system settings" }
+  ],
+  "roles": [
+    {
+      "name": "admin",
+      "description": "System Administrator with full access",
+      "permissions": ["users:read", "users:write", "admin:read", "admin:write"]
+    },
+    {
+      "name": "user",
+      "description": "Standard User with basic privileges",
+      "permissions": ["users:read", "users:write"]
+    }
+  ]
+}

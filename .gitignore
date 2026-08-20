@@ -1,0 +1,57 @@
+# Research & Academic Paper (Ignored from GitHub)
+research/
+
+# Temporary directories & Scratch files
+tmp/
+temp/
+scratch/
+logs/
+*.log
+
+# Data directory & SQLite database files
+data/
+app/data/
+*.db
+*.db-wal
+*.db-shm
+sql_app.db
+
+# Environment variables & Environment secrets
+.env
+.env.local
+.env.*.local
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Python build artifacts, bytecode & cache files
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
+*.egg-info/
+.eggs/
+.mypy_cache/
+.ruff_cache/
+
+# Pytest, Coverage & Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+.hypothesis/
+
+# IDE, Editor & Antigravity IDE workspace temp files
+.vscode/
+.idea/
+.gemini/
+*.swp
+*.swo
+
+# OS System temporary files
+.DS_Store
+Thumbs.db
