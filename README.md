@@ -7,6 +7,12 @@
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?style=flat&logo=docker)](https://www.docker.com)
 [![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-E6522C.svg?style=flat&logo=prometheus)](http://localhost:8000/metrics)
 [![Timezone](https://img.shields.io/badge/Timezone-America%2FMexico__City%20(GMT--6)-blue.svg)](#)
+[![MCP](https://img.shields.io/badge/MCP-Model%20Context%20Protocol-blueviolet.svg)](#interoperabilidad-con-agentes-de-ia-mcp)
+
+---
+
+## 🤖 Interoperabilidad con Agentes de IA (MCP Protocol)
+La API integra un servidor **FastMCP (Model Context Protocol)** accesible vía `POST /api/v1/mcp/rpc`. Permite a Agentes Autónomos y LLMs evaluar el puntaje de riesgo de contexto mediante su motor de Machine Learning (*IsolationForest* de 8 vectores) y generar dinámicamente desafíos *Proof-of-Work* (PoW) criptográficos para mitigación de bots y abusos.
 
 API REST de nivel empresarial y marco de investigación para **Autenticación Passwordless y 2FA Basada en Zero-Trust**, combinando protección criptográfica en el cliente, motor de riesgo contextual adaptativo y trazabilidad en tiempo real.
 
